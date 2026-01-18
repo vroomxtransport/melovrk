@@ -3,6 +3,24 @@
 import { Send } from "lucide-react";
 
 export default function Contact() {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData as any).toString(),
+            });
+            alert("Thank you! Your request has been received. We will contact you shortly.");
+            form.reset();
+        } catch (error) {
+            alert("Submission failed. Please try again or call us directly.");
+        }
+    };
+
     return (
         <section id="contact" className="py-24 bg-[#050505] relative">
             <div className="container mx-auto px-6 max-w-4xl">
@@ -25,6 +43,7 @@ export default function Contact() {
                         method="POST"
                         data-netlify="true"
                         className="space-y-6"
+                        onSubmit={handleSubmit}
                     >
                         <input type="hidden" name="form-name" value="main-contact-form" />
                         <div className="grid md:grid-cols-2 gap-6">

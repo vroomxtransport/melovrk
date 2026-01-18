@@ -5,6 +5,24 @@ import { ArrowRight, MapPin } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        try {
+            await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData as any).toString(),
+            });
+            alert("Thank you! Your request has been received. We will contact you shortly.");
+            form.reset();
+        } catch (error) {
+            alert("Submission failed. Please try again or call us directly.");
+        }
+    };
+
     return (
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
             {/* Background */}
@@ -90,6 +108,7 @@ export default function Hero() {
                             method="POST"
                             data-netlify="true"
                             className="space-y-4"
+                            onSubmit={handleSubmit}
                         >
                             <input type="hidden" name="form-name" value="quick-service-request" />
                             <div>
