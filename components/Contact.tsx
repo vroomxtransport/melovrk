@@ -20,40 +20,46 @@ export default function Contact() {
                         </p>
                     </div>
 
-                    <form className="space-y-6">
+                    <form
+                        name="main-contact-form"
+                        method="POST"
+                        data-netlify="true"
+                        className="space-y-6"
+                    >
+                        <input type="hidden" name="form-name" value="main-contact-form" />
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400 font-medium ml-1">Name</label>
-                                <input type="text" placeholder="John Doe" className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" />
+                                <input type="text" name="name" placeholder="John Doe" required className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400 font-medium ml-1">Company</label>
-                                <input type="text" placeholder="Trucking Co." className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" />
+                                <input type="text" name="company" placeholder="Trucking Co." className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" />
                             </div>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400 font-medium ml-1">Phone</label>
-                                <input type="tel" placeholder="(555) 555-5555" className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" />
+                                <input type="tel" name="phone" placeholder="(555) 555-5555" required className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400 font-medium ml-1">Service Type</label>
-                                <select className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors">
-                                    <option>General Repair</option>
-                                    <option>Roadside Assistance</option>
-                                    <option>Preventative Maintenance</option>
-                                    <option>Other</option>
+                                <select name="service" className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors">
+                                    <option value="General Repair">General Repair</option>
+                                    <option value="Roadside Assistance">Roadside Assistance</option>
+                                    <option value="Preventative Maintenance">Preventative Maintenance</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
                         </div>
 
                         <div className="space-y-2">
                             <label className="text-sm text-gray-400 font-medium ml-1">Message</label>
-                            <textarea rows={4} placeholder="Describe your issue..." className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors"></textarea>
+                            <textarea name="message" rows={4} placeholder="Describe your issue..." required className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 transition-colors"></textarea>
                         </div>
 
-                        <button type="button" className="w-full py-4 bg-primary text-black font-bold rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)]">
+                        <button type="submit" className="w-full py-4 bg-primary text-black font-bold rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(6,182,212,0.2)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)]">
                             <Send className="w-5 h-5" />
                             Send Request
                         </button>

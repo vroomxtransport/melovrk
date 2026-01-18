@@ -85,28 +85,34 @@ export default function Hero() {
                             <p className="text-gray-400 text-sm">Get a quote or schedule a repair in minutes.</p>
                         </div>
 
-                        <form className="space-y-4">
+                        <form
+                            name="quick-service-request"
+                            method="POST"
+                            data-netlify="true"
+                            className="space-y-4"
+                        >
+                            <input type="hidden" name="form-name" value="quick-service-request" />
                             <div>
-                                <input type="text" placeholder="Your Name" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-500" />
+                                <input type="text" name="name" placeholder="Your Name" required className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-500" />
                             </div>
                             <div>
-                                <input type="tel" placeholder="Phone Number" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-500" />
+                                <input type="tel" name="phone" placeholder="Phone Number" required className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-500" />
                             </div>
                             <div>
-                                <select className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors text-gray-400">
+                                <select name="service" required className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors text-gray-400">
                                     <option value="" disabled selected>Service Needed</option>
-                                    <option className="bg-black">Roadside Assistance</option>
-                                    <option className="bg-black">Tire Repair/Change</option>
-                                    <option className="bg-black">Engine Diagnostics</option>
-                                    <option className="bg-black">Preventative Maintenance</option>
-                                    <option className="bg-black">Other</option>
+                                    <option value="Roadside Assistance" className="bg-black">Roadside Assistance</option>
+                                    <option value="Tire Repair/Change" className="bg-black">Tire Repair/Change</option>
+                                    <option value="Engine Diagnostics" className="bg-black">Engine Diagnostics</option>
+                                    <option value="Preventative Maintenance" className="bg-black">Preventative Maintenance</option>
+                                    <option value="Other" className="bg-black">Other</option>
                                 </select>
                             </div>
                             <div>
-                                <textarea rows={3} placeholder="Briefly describe the issue..." className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-500 resize-none"></textarea>
+                                <textarea name="description" rows={3} placeholder="Briefly describe the issue..." className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-500 resize-none"></textarea>
                             </div>
 
-                            <button type="button" className="w-full py-3 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 transition-all shadow-[0_0_15px_rgba(6,182,212,0.15)] hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] text-sm">
+                            <button type="submit" className="w-full py-3 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 transition-all shadow-[0_0_15px_rgba(6,182,212,0.15)] hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] text-sm">
                                 Submit Request
                             </button>
                         </form>
