@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netlify Forms Placeholder</title>
+</head>
+<body>
+    <!-- 
+      This file exists solely to allow Netlify's build bots to detect the forms 
+      and register them for the Next.js App Router site. 
+    -->
+
+    <!-- Quick Service Request Form (Hero) -->
+    <form name="quick-service-request" netlify data-netlify="true" hidden>
+        <input type="hidden" name="form-name" value="quick-service-request" />
+        <input type="text" name="name" />
+        <input type="tel" name="phone" />
+        <select name="service">
+            <option value="Roadside Assistance">Roadside Assistance</option>
+            <option value="Tire Repair/Change">Tire Repair/Change</option>
+            <option value="Engine Diagnostics">Engine Diagnostics</option>
+            <option value="Preventative Maintenance">Preventative Maintenance</option>
+            <option value="Other">Other</option>
+        </select>
+        <textarea name="description"></textarea>
+    </form>
+
+    <!-- Main Contact Form (Contact Section) -->
+    <form name="main-contact-form" netlify data-netlify="true" hidden>
+        <input type="hidden" name="form-name" value="main-contact-form" />
+        <input type="text" name="name" />
+        <input type="text" name="company" />
+        <input type="tel" name="phone" />
+        <select name="service">
+            <option value="General Repair">General Repair</option>
+            <option value="Roadside Assistance">Roadside Assistance</option>
+            <option value="Preventative Maintenance">Preventative Maintenance</option>
+            <option value="Other">Other</option>
+        </select>
+        <textarea name="message"></textarea>
+    </form>
+</body>
+</html>
