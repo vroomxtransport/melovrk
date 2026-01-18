@@ -15,9 +15,10 @@ export default function Hero() {
                     fill
                     priority
                     className="object-cover opacity-95"
+                    sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-[#050505] opacity-20 z-0"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/70 to-transparent z-1"></div>
+                <div className="absolute inset-0 bg-[#050505] opacity-0 z-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/40 to-transparent z-1"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent z-1"></div>
             </div>
 
@@ -67,7 +68,50 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Visual Element / Decoration - REMOVED */}
-                <div className="hidden md:block"></div>
+                {/* Service Inquiry Form */}
+                <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="hidden md:block w-full max-w-md ml-auto"
+                >
+                    <div className="rounded-2xl p-6 bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl relative overflow-hidden">
+                        {/* Form Background decoration */}
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-[40px] -z-10"></div>
+                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent/10 rounded-full blur-[40px] -z-10"></div>
+
+                        <div className="mb-6">
+                            <h3 className="text-2xl font-bold text-white mb-2">Quick Service Request</h3>
+                            <p className="text-gray-400 text-sm">Get a quote or schedule a repair in minutes.</p>
+                        </div>
+
+                        <form className="space-y-4">
+                            <div>
+                                <input type="text" placeholder="Your Name" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-500" />
+                            </div>
+                            <div>
+                                <input type="tel" placeholder="Phone Number" className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-500" />
+                            </div>
+                            <div>
+                                <select className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors text-gray-400">
+                                    <option value="" disabled selected>Service Needed</option>
+                                    <option className="bg-black">Roadside Assistance</option>
+                                    <option className="bg-black">Tire Repair/Change</option>
+                                    <option className="bg-black">Engine Diagnostics</option>
+                                    <option className="bg-black">Preventative Maintenance</option>
+                                    <option className="bg-black">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <textarea rows={3} placeholder="Briefly describe the issue..." className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-500 resize-none"></textarea>
+                            </div>
+
+                            <button type="button" className="w-full py-3 bg-primary text-black font-bold rounded-lg hover:bg-primary/90 transition-all shadow-[0_0_15px_rgba(6,182,212,0.15)] hover:shadow-[0_0_25px_rgba(6,182,212,0.3)] text-sm">
+                                Submit Request
+                            </button>
+                        </form>
+                    </div>
+                </motion.div>
             </div>
         </section>
     );

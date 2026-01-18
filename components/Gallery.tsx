@@ -50,6 +50,7 @@ export default function Gallery() {
                                 src={images[currentIndex]}
                                 alt={`MeloVRK Gallery Image ${currentIndex + 1}`}
                                 fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                                 className="object-cover"
                                 priority
                             />

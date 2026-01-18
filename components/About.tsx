@@ -49,10 +49,7 @@ export default function About() {
                                     <div className="w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
                                     <span>Expertise in major Truck & Trailer brands</span>
                                 </li>
-                                <li className="flex items-center gap-3 text-gray-300">
-                                    <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
-                                    <span>Rapid response times for lockouts & jumpstarts</span>
-                                </li>
+
                                 <li className="flex items-center gap-3 text-gray-300">
                                     <div className="w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
                                     <span>Comprehensive diagnostics & electrical repair</span>

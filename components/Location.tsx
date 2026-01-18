@@ -62,7 +62,16 @@ export default function Location() {
                 <div className="h-[600px] rounded-2xl bg-white/5 border border-white/10 overflow-hidden relative group">
                     {/* Map Placeholder or IFrame */}
                     <div className="absolute inset-0 bg-neutral-900 flex items-center justify-center">
-                        <span className="text-gray-500">Map Interface Loading...</span>
+                        <iframe
+                            src="https://maps.google.com/maps?q=MeloVRK+Truck+%26+Trailer+Repair+Shop+225+Lincoln+Hwy+Fairless+Hills+PA&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="opacity-80 hover:opacity-100 transition-opacity duration-500"
+                        ></iframe>
                     </div>
                     {/* Overlay gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
