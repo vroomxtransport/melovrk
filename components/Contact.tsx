@@ -3,21 +3,34 @@
 import { Send } from "lucide-react";
 
 export default function Contact() {
+    const encode = (data: { [key: string]: string }) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    };
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const form = e.currentTarget;
         const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries()) as { [key: string]: string };
 
         try {
-            await fetch("/", {
+            const response = await fetch("/", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData as any).toString(),
+                body: encode(data),
             });
-            alert("Thank you! Your request has been received. We will contact you shortly.");
-            form.reset();
+
+            if (response.ok) {
+                alert("Thank you! Your request has been received. We will contact you shortly.");
+                form.reset();
+            } else {
+                throw new Error("Network response was not ok");
+            }
         } catch (error) {
-            alert("Submission failed. Please try again or call us directly.");
+            console.error("Form Error:", error);
+            alert("Submission failed. Please try again or call us directly at 267-319-2421.");
         }
     };
 
