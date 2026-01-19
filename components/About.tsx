@@ -15,8 +15,7 @@ export default function About() {
                             Local Family Owned Truck & Trailer Repair
                         </h3>
                         <p className="text-gray-400 text-lg mb-6 leading-relaxed">
-                            MeloVRK Truck & Trailer Repair is a local family-owned company in Fairless Hills, PA. Our services extend throughout counties in both
-                            <span className="text-white font-bold"> Pennsylvania</span> and <span className="text-white font-bold">New Jersey</span>!
+                            MeloVRK Truck & Trailer Repair is a local family-owned company in Fairless Hills, PA.
                         </p>
                         <p className="text-gray-400 text-lg mb-8 leading-relaxed">
                             We provide heavy-duty truck and trailer repair services both on-site and on the road. Our expertise includes Tire Change, Jumpstarts, Lockouts, Fuel Delivery, Engine Oil Delivery, Antifreeze Delivery, Computer Diagnostics, Starter Replacement, Trailer Brakes, Air Line Repairs, and much more.
