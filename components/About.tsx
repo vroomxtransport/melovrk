@@ -42,7 +42,7 @@ export default function About() {
                             <ul className="space-y-4">
                                 <li className="flex items-center gap-3 text-gray-300">
                                     <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(239,68,68,0.5)]"></div>
-                                    <span>24/7 Mobile Roadside Assistance</span>
+                                    <span>Fast & Reliable Roadside Assistance</span>
                                 </li>
                                 <li className="flex items-center gap-3 text-gray-300">
                                     <div className="w-2 h-2 rounded-full bg-accent shadow-[0_0_10px_rgba(59,130,246,0.5)]"></div>
