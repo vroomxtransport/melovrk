@@ -120,10 +120,14 @@ export default function Hero() {
                             name="quick-service-request"
                             method="POST"
                             data-netlify="true"
+                            netlify-honeypot="bot-field"
                             className="space-y-4"
                             onSubmit={handleSubmit}
                         >
                             <input type="hidden" name="form-name" value="quick-service-request" />
+                            <p className="hidden">
+                                <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                            </p>
                             <div>
                                 <input type="text" name="name" placeholder="Your Name" required className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors placeholder:text-gray-500" />
                             </div>

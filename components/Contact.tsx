@@ -55,10 +55,14 @@ export default function Contact() {
                         name="main-contact-form"
                         method="POST"
                         data-netlify="true"
+                        netlify-honeypot="bot-field"
                         className="space-y-6"
                         onSubmit={handleSubmit}
                     >
                         <input type="hidden" name="form-name" value="main-contact-form" />
+                        <p className="hidden">
+                            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                        </p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label className="text-sm text-gray-400 font-medium ml-1">Name</label>
