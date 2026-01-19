@@ -42,7 +42,7 @@ export default function Location() {
                             <div>
                                 <h4 className="text-white font-bold text-lg">Operating Hours</h4>
                                 <p className="text-gray-400">Mon - Fri: 7:00 AM - 9:00 PM</p>
-                                <p className="text-primary font-bold mt-1">24/7 Roadside Assistance</p>
+
                             </div>
                         </div>
 
