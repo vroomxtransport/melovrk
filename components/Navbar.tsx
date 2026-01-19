@@ -34,7 +34,7 @@ export default function Navbar() {
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="relative w-[400px] h-[120px]">
+                    <div className="relative w-48 h-16 md:w-[400px] md:h-[120px] transition-all duration-300">
                         <img
                             src="/images/logo.png"
                             alt="MeloVRK Logo"
